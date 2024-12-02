@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calc.css">
+    <title>Calculator</title> 
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="result" disabled>
+        <div class="button-container">
+            <button class="button button-c" onclick="clearResult()">C</button>
+            <button class="button numbers" onclick="apppendToResult('1')">1</button>
+            <button class="button numbers" onclick="apppendToResult('2')">2</button>
+            <button class="button operators" onclick="apppendToResult('+')">+</button>
+            <button class="button numbers" onclick="apppendToResult('3')">3</button>
+            <button class="button numbers" onclick="apppendToResult('4')">4</button>
+            <button class="button operators"onclick="apppendToResult('-')">-</button>
+            <button class="button numbers" onclick="apppendToResult('5')">5</button>
+            <button class="button numbers" onclick="apppendToResult('6')">6</button>
+            <button class="button operators" onclick="apppendToResult('*')">*</button>
+            <button class="button numbers" onclick="apppendToResult('7')">7</button>
+            <button class="button numbers" onclick="apppendToResult('8')">8</button>
+            <button class="button operators" onclick="apppendToResult('/')">/</button>
+            <button class="button numbers" onclick="apppendToResult('0')">0</button>
+            <button class="button numbers" onclick="apppendToResult('0')">9</button>
+            <button class="button" onclick="apppendToResult('.')">.</button>
+            <button class="button equal" onclick="calculateResult()">=</button>
+       </div>
+    </div> 
+    <script>
+        function apppendToResult(value){
+            document.getElementById("result").value+=value;
+            
+        }
+        function clearResult(){
+            document.getElementById("result").value=" ";
+            
+        }
+        function calculateResult(){
+            const resultField=document.getElementById("result");
+            try{
+                resultField.value=eval(resultField.value);
+            }
+            catch(error){
+                resultField.value="Error";
+            }
+            }
+
+
+    </script>
+</body>
+</html>
